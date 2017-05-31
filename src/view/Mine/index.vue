@@ -5,8 +5,8 @@
       <h2>与世界分享你的知识、经验和见解</h2>
     </div>
     <div class="login-sel">
-      <router-link to="/Login/register" active-class="active">注册</router-link>
-      <router-link to="/Login/logined" active-class="active">登录</router-link>
+      <router-link to="/Mine/register" active-class="active">注册</router-link>
+      <router-link to="/Mine/logined" active-class="active">登录</router-link>
     </div>
     <router-view></router-view>
     <div class="login-relation">

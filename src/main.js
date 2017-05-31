@@ -5,6 +5,7 @@ import Element from 'element-ui'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import vueResource from 'vue-resource'
 
 
 // import 'element-ui/lib/theme-default/index.css';
@@ -14,7 +15,7 @@ Vue.config.productionTip = false
 Vue.use(Element)
 
 Vue.use(Mintui)
-
+Vue.use(vueResource)
 
 /* eslint-disable no-new */
 new Vue({
