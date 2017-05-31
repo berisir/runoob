@@ -4,7 +4,15 @@ import Home from '@/view/Home'
 import Special from '@/view/Special'
 import Course from '@/view/Course'
 import Interview from '@/view/Interview'
-import Mine from '@/view/Mine'
+import My from '@/view/My'
+import MyQuestion from '@/view/MyQuestion'
+import MyCollect from '@/view/MyCollect'
+import MyDiscuss from '@/view/MyDiscuss'
+import MyToolCase from '@/view/MyToolCase'
+import Resume from '@/view/MyToolCase/children/Resume'
+import LeavingCertificate from '@/view/MyToolCase/children/LeavingCertificate'
+import Compensation from '@/view/MyToolCase/children/Compensation'
+import Watercourse from '@/view/MyToolCase/children/Watercourse'
 
 
 import Resource from '@/view/Home/component/Resource'
@@ -68,14 +76,53 @@ export default new Router({
       component: Interview
     },
     {
-      path: '/Mine',
-      name: 'Mine',
-      component: Mine
-    },
-    {
       path: '/Detail',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path: '/My',
+      name: 'My',
+      component: My
+    },
+    {
+      path: "/MyQuestion",
+      name: "MyQuestion",
+      component: MyQuestion
+    },
+    {
+      path: "/MyCollect",
+      name: "MyCollect",
+      component: MyCollect
+    },
+    {
+      path: "/MyDiscuss",
+      name: "MyDiscuss",
+      component: MyDiscuss
+    },
+    {
+      path: "/MyToolCase",
+      redirect:"/MyToolCase/Resume",
+      name: "MyToolCase",
+      component: MyToolCase,
+      children:[
+        {
+          path: 'Resume',
+          component: Resume
+        },
+        {
+          path: 'LeavingCertificate',
+          component: LeavingCertificate
+        },
+        {
+          path: 'Compensation',
+          component: Compensation
+        },
+        {
+          path: 'Watercourse',
+          component: Watercourse
+        }
+      ]
     }
   ]
 })

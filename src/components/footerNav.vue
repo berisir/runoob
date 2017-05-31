@@ -3,7 +3,7 @@
 		<div><i class="fa fa-info"></i><router-link active-class="footer-active" to="/Special">专题</router-link></div>
 		<div><i class="fa fa-mortar-board"></i><router-link active-class="footer-active" to="/Course">教程</router-link></div>	
 		<div><i class="fa fa-map-o"></i><router-link active-class="footer-active" to="/Interview">面试</router-link></div>	
-		<div><i class="fa fa-user-circle-o"></i><router-link active-class="footer-active" to="/Mine">我的</router-link></div>	
+		<div><i class="fa fa-user-circle-o"></i><router-link active-class="footer-active" to="/My">我的</router-link></div>	
 	</div>
 </template>
 <style lang="less">
