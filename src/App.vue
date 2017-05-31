@@ -13,6 +13,7 @@ import '@/static/font-awesome/css/font-awesome.css'
 export default {
   name: 'app',
   created (){
+  
   }
 }
 </script>

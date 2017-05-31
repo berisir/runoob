@@ -4,6 +4,7 @@ import Home from '@/view/Home'
 import Special from '@/view/Special'
 import Course from '@/view/Course'
 import Interview from '@/view/Interview'
+<<<<<<< HEAD
 import My from '@/view/My'
 import MyQuestion from '@/view/MyQuestion'
 import MyCollect from '@/view/MyCollect'
@@ -14,6 +15,11 @@ import LeavingCertificate from '@/view/MyToolCase/children/LeavingCertificate'
 import Compensation from '@/view/MyToolCase/children/Compensation'
 import Watercourse from '@/view/MyToolCase/children/Watercourse'
 
+=======
+import Mine from '@/view/Mine'
+import Register from '@/view/Mine/component/Register'
+import Logined from '@/view/Mine/component/Logined'
+>>>>>>> 882eb0e43eecb0252f72e224780051a842430015
 
 import Resource from '@/view/Home/component/Resource'
 import HomeIndex from '@/view/Home/component/HomeIndex'
@@ -76,6 +82,27 @@ export default new Router({
       component: Interview
     },
     {
+<<<<<<< HEAD
+=======
+      path: '/Mine',
+      name: 'Mine',
+      component: Mine,
+      redirect:'/Mine/register',
+      children:[
+        {
+          path: 'register',
+          name: 'register',
+          component: Register
+        },
+        {
+          path: 'logined',
+          name: 'logined',
+          component: Logined
+        }
+      ]
+    },
+    {
+>>>>>>> 882eb0e43eecb0252f72e224780051a842430015
       path: '/Detail',
       name: 'Detail',
       component: Detail
