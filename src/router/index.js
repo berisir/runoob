@@ -5,7 +5,8 @@ import Special from '@/view/Special'
 import Course from '@/view/Course'
 import Interview from '@/view/Interview'
 import Mine from '@/view/Mine'
-
+import Register from '@/view/Mine/component/Register'
+import Logined from '@/view/Mine/component/Logined'
 
 import Resource from '@/view/Home/component/Resource'
 import HomeIndex from '@/view/Home/component/HomeIndex'
@@ -70,7 +71,20 @@ export default new Router({
     {
       path: '/Mine',
       name: 'Mine',
-      component: Mine
+      component: Mine,
+      redirect:'/Mine/register',
+      children:[
+        {
+          path: 'register',
+          name: 'register',
+          component: Register
+        },
+        {
+          path: 'logined',
+          name: 'logined',
+          component: Logined
+        }
+      ]
     },
     {
       path: '/Detail',
