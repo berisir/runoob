@@ -1,10 +1,10 @@
 <template>
   <div class="login-main">
     <div class="login-inputs">
-      <input type="tel" placeholder="手机号或邮箱" id="phone">
-      <input type="password" placeholder="密码" id="pass">
+      <input type="tel" placeholder="手机号或邮箱" id="phone" v-model="phone"><span class="hint" v-show="isable">手机号不存在</span>
+      <input type="password" placeholder="密码" id="pass" v-model="pass">
     </div>
-    <div class="login-register">登录</div>
+    <div class="login-register" @click="loginCode">登录</div>
     <div class="login-agreement">
       <a href="javascript:;" class="code">手机验证码登录</a>
       <a href="javascript:;">无法登录？</a>
@@ -13,7 +13,29 @@
 </template>
 <script>
 export default {
-
+  data:function(){
+    return{
+      phone:"",
+      pass:"",
+      isable:false
+    }
+  },
+  methods:{
+    loginCode:function(){
+      var that=this;
+      if(this.phone.length == 11 && this.pass.length >= 6){
+        this.$http.jsonp('http://169.254.180.40:3366/select?phone='+that.phone+'&pass='+that.pass+'&type=logined',{
+        }).then(function(opt){
+          var newOpt=JSON.parse(opt.bodyText);
+          if(newOpt.status == 1){
+            this.isable=true;
+          }else{
+            this.$router.push("/My");
+          }
+        })
+      }
+    }
+  }
 }
 </script>
 
@@ -30,6 +52,12 @@ export default {
       flex:1;
       padding:0 .1rem;
       border: 0;
+    }
+    .hint{
+      position: absolute;
+      right: .2rem;
+      line-height: .5rem;
+      color: #ff4136;
     }
   }
   .login-register{
